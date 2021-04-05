@@ -1,11 +1,11 @@
 import React from "react";
-import image from "assets/img/t-shirt.jpg";
-import "./App.module.scss";
+import "scss/core.scss";
+
+import { HeaderTop } from "compontnts";
 
 const App = () => {
-    return (<>
-        <h1>Hello, World!</h1>
-        <img src={image} alt="img" />
+    return(<>
+        <HeaderTop />
     </>);
 };
 

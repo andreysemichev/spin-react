@@ -1,11 +1,11 @@
 import React from "react";
 import "scss/core.scss";
 
-import { HeaderTop } from "compontnts";
+import { Header } from "modules";
 
 const App = () => {
     return(<>
-        <HeaderTop />
+        <Header />
     </>);
 };
 

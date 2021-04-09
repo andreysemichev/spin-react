@@ -1,22 +1,22 @@
 import paths from "../paths";
 
 const initialState = {
-    items: [],
-    isLoaging: false
+    value: "",
+    isLoading: false,
 };
 
 const reducer = (state = initialState, { type, payload }) => {
     switch (type) {
-        case paths.example.setItems:
+        case paths.search.setValue:
             return {
                 ...state,
-                items: payload
+                value: payload
             };
             
-        case paths.example.setIsLoading:
+        case paths.wishList.setIsLoading:
             return {
                 ...state,
-                isLoaging: payload
+                isLoading: payload
             };
 
         default: 

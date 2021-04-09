@@ -1,0 +1,61 @@
+@import "scss/variables";
+
+.drop {
+    position: relative;
+
+    img {
+        width: 18px;
+        height: 18px;
+    }
+
+    &:hover .linksWrapper {
+        display: block;
+    }
+}
+
+.linksWrapper {
+    display: none;
+    padding-top: 15px;
+    position: absolute;
+    z-index: 30;
+    right: 50%;
+    transform: translateX(50%);
+}
+
+.links {
+    background-color: #ffffff;
+    width: 280px;
+    border: 1px solid #ebebeb;
+    padding: 30px;
+
+    a {
+        display: block;
+    }
+}
+
+.dropText {
+    font-family: $fontPF;
+    margin-bottom: 20px;
+    text-align: center;
+    text-transform: uppercase;
+    font-size: 1em;
+}
+
+.dropBtn {
+    cursor: pointer;
+    background-color: $colorBlack;
+    color: $colorWhite;
+    display: block;
+    text-align: center;
+    width: 100%;
+    padding-top: 8px;
+    padding-bottom: 8px;
+    text-transform: uppercase;
+
+    &White {
+        margin-top: 10px;
+        border: 2px solid $colorBlack;
+        color: $colorBlack;
+        background-color: $colorWhite;
+    }
+}

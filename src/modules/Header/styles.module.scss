@@ -1,0 +1,35 @@
+@import "scss/variables";
+@import "scss/global";
+
+.headerCenter {
+    background-color: $colorWhite;
+    padding-top: 25px;
+    padding-bottom: 25px;
+    position: relative;
+    display: flex;
+    justify-content: flex-end;
+
+    .logo {
+        height: 50px;
+        display: inline-flex;
+        width: auto;
+        position: absolute;
+        left: 50%;
+        top: 50%;
+        transform: translate(-50%, -50%);
+    }
+
+    .right {
+        width: 220px;
+        display: flex;
+        flex-wrap: wrap;
+        align-items: center;
+        justify-content: space-between;
+
+        &Link {
+            font-size: 0.7em;
+            font-weight: bold;
+            text-transform: uppercase;
+        }
+    }
+}

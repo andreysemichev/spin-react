@@ -1,0 +1,151 @@
+.popUp {
+    position: fixed;
+    z-index: 10000000;
+    left: 0;
+    top: 0;
+    width: 100vw;
+    height: 100vh;
+    background-color: rgba(0, 0, 0, 0.4);
+}
+
+.content {
+    font-size: 14px;
+    background-color: #ffffff;
+    max-width: 400px;
+    width: 100%;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.top {
+    position: relative;
+    background-color: #000000;
+    padding: 20px 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    img {
+      height: 40px;
+    }
+}
+
+.close {
+    color: #ffffff;
+    position: absolute;
+    top: 0;
+    right: 10px;
+    font-size: 40px;
+    cursor: pointer;
+    transition: 0.1s opacity;
+
+    &:hover {
+      opacity: 0.7;
+    }
+}
+
+.middle {
+    padding: 20px;
+
+    &Field {
+        position: relative;
+        display: grid;
+        align-items: center;
+        grid-template-columns: 80px 1fr;
+        margin-bottom: 7px;
+
+        input {
+            font-size: inherit;
+            padding: 5px 20px;
+            outline: none;
+            border: 1px solid #000000;
+            font-weight: bold;
+            width: 100%;
+            font-size: 14px;
+        }
+    }
+
+    &Txt {
+        font-size: 14px;
+        width: 70px;
+        display: inline-block;
+
+        &:last-child {
+          width: auto;
+        }
+    }
+}
+
+.necessarily::before {
+    content: "*";
+    padding-left: 3px;
+    color: #ea7162;
+    content: "*";
+    font-size: 13px;
+}
+
+.forgot {
+    text-decoration: underline;
+    text-align: center;
+    margin-bottom: 0;
+}
+
+.remember {
+    margin-bottom: 0;
+    padding-top: 10px;
+    display: flex;
+    align-items: center;
+    
+    input {
+        width: auto;
+        margin-right: 10px;
+    }
+}
+
+.socialNetworks {
+    padding: 10px 0;
+    border: 1px solid #000000;
+    border-left: 0;
+    border-right: 0;
+    text-align: center;
+
+    &Icons {
+      margin-top: 10px;
+    }
+}
+
+.auth {
+    padding: 20px;
+    padding-top: 0;
+
+    &In, &Up {
+        background-color: #000000;
+        color: #ffffff;
+        text-align: center;
+        display: block;
+        font-weight: 900;
+        text-transform: uppercase;
+        padding: 6px;
+        cursor: pointer;
+    }
+
+    &Up {
+        margin-top: 6px;
+        background-color: #ffffff;
+        color: #000000;
+        border: 1px solid #000000;
+    }
+
+    .error {
+        margin-top: 7px;
+        text-align: center;
+    }
+}
+
+.error {
+    color: #ea7162;
+    font-weight: bold;
+    font-size: 12px;
+}

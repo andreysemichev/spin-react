@@ -1,0 +1,47 @@
+.gridContainer {
+    padding-bottom: 30px;
+    display: grid;
+    grid-template-columns: 80px 1fr 1fr;
+    grid-template-rows: 1fr 1fr;
+    gap: 0px 0px;
+    grid-template-areas:
+        "img name name"
+        "img price delete";
+
+    &:last-child {
+        padding-bottom: 0;
+    }
+
+    .img {
+        grid-area: img;
+        width: 80px;
+        height: 80px;
+    }
+    
+    .name {
+        grid-area: name;
+        padding-left: 30px;
+    }
+    
+    .price {
+        grid-area: price;
+        padding-left: 30px;
+        font-size: 18px;
+        font-weight: 600;
+        display: flex;
+        align-items: flex-end;
+    }
+    
+    .delete {
+        grid-area: delete;
+        display: flex;
+        align-items: flex-end;
+        justify-content: flex-end;
+    
+        &Inner {
+            cursor: pointer;
+            font-size: 18px;
+        }
+    }
+}
+

@@ -1,4 +1,5 @@
 import React from "react";
+import { NavLink } from "react-router-dom";
 import classnames from "classnames";
 import { HeaderTop } from "components";
 import { ShoppingBag, WishList, LanguageDrop, Search, AuthPopUp, AuthDrop, Menu } from "containers";
@@ -10,15 +11,15 @@ const Header = props => {
         <AuthPopUp />
         <HeaderTop />
         <div className={classnames(styles.headerCenter, styles.container)}>
-            <a href="/">
+            <NavLink to="/">
                 <img className={styles.logo} src={logo} alt="Spin 4 Spin" />
-            </a>
+            </NavLink>
             <div className={styles.right}>
                 <LanguageDrop />
                 <AuthDrop />
                 <WishList />
                 <ShoppingBag />
-                <a className={styles.rightLink} href="/">Продать</a>
+                <NavLink className={styles.rightLink} to="/">Продать</NavLink>
                 <Search />
             </div>
         </div>

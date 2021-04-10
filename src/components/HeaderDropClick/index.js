@@ -1,4 +1,5 @@
 import React from "react";
+import { NavLink } from "react-router-dom";
 import { HeaderDropClickItem } from "components"
 import styles from "./styles.module.scss";
 
@@ -18,7 +19,7 @@ const HeaderDropClick = ({ img, items, isHide, handleHideOrShow, nodeRefWrapper,
                 </ul>
                 { counter !== 0 && 
                     <div className={styles.button}>
-                        <a href="/">{btnName}</a>
+                        <NavLink to="/">{btnName}</NavLink>
                     </div> }
             </div> }
         

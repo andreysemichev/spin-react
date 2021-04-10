@@ -1,4 +1,5 @@
 import React from "react";
+import { NavLink } from "react-router-dom";
 import classnames from "classnames";
 import styles from "./styles.module.scss";
 import logo from "assets/img/logo.svg";
@@ -37,8 +38,8 @@ const Footer = () => {
                     <a href="https://t.me/spin4spin" className={styles.bottomItem}>Telegram</a>
                 </div>
                 <div className={styles.bottomSection}>
-                    <a href="/" className={styles.bottomItem}>Химчистка</a>
-                    <a href="/" className={styles.bottomItem}>Распродажа</a>
+                    <NavLink className={styles.bottomItem} to="/">Химчистка</NavLink>
+                    <NavLink className={styles.bottomItem} to="/">Распродажа</NavLink>
                 </div>
             </div>
         </div>

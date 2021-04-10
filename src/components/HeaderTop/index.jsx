@@ -1,4 +1,5 @@
 import React from "react";
+import { NavLink } from "react-router-dom";
 import classnames from "classnames";
 import { useMediaQuery } from "react-responsive";
 import styles from "./styles.module.scss";
@@ -26,8 +27,8 @@ const HeaderTop = props => {
                     </div>
                 </div>
                 <div className={classnames(styles.wrapperInner, styles.center)}>
-                    <a className={styles.centerLink} href="/">Бесплатная доставка</a>
-                    <a className={styles.centerLink} href="/">по Москве при заказе от 12000 рублей</a>
+                    <NavLink className={styles.centerLink} to="/">Бесплатная доставка</NavLink>
+                    <NavLink className={styles.centerLink} to="/">по Москве при заказе от 12000 рублей</NavLink>
                 </div>
                 <div className={classnames(styles.wrapperInner, styles.right)}>
                     <a className={styles.rightInnerLinkImg} href="https://t.me/spinoffice">
@@ -58,11 +59,11 @@ const HeaderTop = props => {
                 </div>
             </div>
             <div className={classnames(styles.wrapperInner, styles.center)}>
-                <a className={styles.centerLink} href="/">Бесплатная доставка *</a>
-                <a className={styles.centerLink} href="/">Бесплатный возврат</a>
+                <NavLink className={styles.centerLink} to="/">Бесплатная доставка *</NavLink>
+                <NavLink className={styles.centerLink} to="/">Бесплатный возврат</NavLink>
             </div>
             <div className={classnames(styles.wrapperInner, styles.right)}>
-                <a href="/">Контакты</a>
+                <NavLink to="/">Контакты</NavLink>
             </div>
         </div>
     </div>);

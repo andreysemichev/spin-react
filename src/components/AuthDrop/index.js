@@ -1,4 +1,5 @@
 import React from "react";
+import { NavLink } from "react-router-dom";
 import classnames from "classnames";
 import userIcon from "assets/img/user-icon.svg";
 import styles from "./styles.module.scss";
@@ -10,9 +11,9 @@ const AuthDrop = ({handleHideOrShow}) => {
         </div>
         <div className={styles.linksWrapper}>
             <div className={styles.links}>
-                <a className={styles.dropText} href="/">Личный кабинет</a>
+                <NavLink className={styles.dropText} to="/">Личный кабинет</NavLink>
                 <div className={styles.dropBtn} onClick={handleHideOrShow}>Войти</div>
-                <a className={classnames(styles.dropBtn, styles.dropBtnWhite)} href="/">Регистрация</a>
+                <NavLink className={classnames(styles.dropBtn, styles.dropBtnWhite)} to="/">Регистрация</NavLink>
             </div>
         </div>
     </div>);

@@ -1,4 +1,5 @@
 import React from "react";
+import { NavLink } from "react-router-dom";
 import classnames from "classnames";
 import { CheckBox } from "components";
 import styles from "./styles.module.scss";
@@ -47,7 +48,7 @@ const PopUp = ({
                 <label className={classnames(styles.middleField, styles.forgot)}>
                     <div />
                     <div>
-                        <a href="/">Забыли пароль</a>
+                        <NavLink to="/">Забыли пароль</NavLink>
                     </div>
                 </label>
                 <label className={classnames(styles.middleField, styles.remember)} onClick={handleRememberMe}>

@@ -3,7 +3,8 @@ import shoppingBag from "./shopping-bag";
 import wishList from "./wish-list";
 import language from "./language";
 import search from "./search";
-import signIn from "./sign-in";
+import authPopUp from "./auth-pop-up";
 import menu from "./menu";
+import root from "./root";
 
-export default combineReducers({ shoppingBag, wishList, language, search, signIn, menu });
+export default combineReducers({ shoppingBag, wishList, language, search, authPopUp, menu, root });

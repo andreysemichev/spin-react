@@ -1,13 +1,13 @@
 import React from "react";
 import classnames from "classnames";
 import { HeaderTop } from "components";
-import { ShoppingBag, WishList, LanguageDrop, Search, PopUp, AuthDrop, Menu } from "containers";
+import { ShoppingBag, WishList, LanguageDrop, Search, AuthPopUp, AuthDrop, Menu } from "containers";
 import styles from "./styles.module.scss";
 import logo from "assets/img/logo.svg";
 
 const Header = props => {
     return(<header>
-        <PopUp />
+        <AuthPopUp />
         <HeaderTop />
         <div className={classnames(styles.headerCenter, styles.container)}>
             <a href="/">

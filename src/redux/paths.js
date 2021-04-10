@@ -37,4 +37,9 @@ paths.menu = {};
 paths.menu.setIsLoading = "/menu/setIsLoading";
 paths.menu.setItems = "/menu/setItems";
 
+// root
+paths.root = {};
+paths.root.setIsLoading = "/root/setIsLoading";
+paths.root.setHtml = "/root/setHtml";
+
 export default paths;

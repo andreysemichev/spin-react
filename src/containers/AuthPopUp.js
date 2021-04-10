@@ -1,6 +1,6 @@
 import React, { useRef } from "react";
 import { connect } from "react-redux";
-import { signInActions } from "redux/actions"
+import { authPopUpActions } from "redux/actions"
 import { AuthPopUp } from "components";
 import Validate from "utils/validate";
 
@@ -81,7 +81,9 @@ const PopUp = ({ email, password, rememberMe, isLoading, isHide, errors, setIsHi
 
         setErrors(wrapper);
 
-        console.log("auth...")
+        if (wrapper.email === null && wrapper.password) {
+            console.log("auth...");
+        }
     }
 
     return <AuthPopUp
@@ -104,6 +106,6 @@ const PopUp = ({ email, password, rememberMe, isLoading, isHide, errors, setIsHi
 };
 
 export default connect(
-    ({ signIn }) => signIn,
-    signInActions
+    ({ authPopUp }) => authPopUp,
+    authPopUpActions
 )(PopUp);

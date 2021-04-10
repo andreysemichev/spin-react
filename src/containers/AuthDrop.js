@@ -1,6 +1,6 @@
 import React from "react";
 import { connect } from "react-redux";
-import { signInActions } from "redux/actions"
+import { authPopUpActions } from "redux/actions"
 import { AuthDrop } from "components";
 
 
@@ -15,6 +15,6 @@ const Drop = ({ setIsHide }) => {
 };
 
 export default connect(
-    ({ signIn }) => signIn, // заменить на Auth
-    signInActions
+    ({ authPopUp }) => authPopUp,
+    authPopUpActions
 )(Drop);

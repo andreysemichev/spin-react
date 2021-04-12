@@ -5,3 +5,4 @@ export { default as searchActions } from "./search";
 export { default as authPopUpActions } from "./auth-pop-up";
 export { default as menuActions } from "./menu";
 export { default as rootActions } from "./root";
+export { default as productActions } from "./product";

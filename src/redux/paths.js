@@ -42,4 +42,9 @@ paths.root = {};
 paths.root.setIsLoading = "/root/setIsLoading";
 paths.root.setHtml = "/root/setHtml";
 
+// product
+paths.product = {};
+paths.product.setProduct = "/product/setProduct";
+paths.product.setIsLoading = "/product/setIsLoading";
+
 export default paths;

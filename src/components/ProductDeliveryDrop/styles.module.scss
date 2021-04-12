@@ -1,0 +1,25 @@
+.title {
+    cursor: pointer;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-top: 1px solid #ebebeb;
+    color: #14131d;
+    font-weight: 600;
+    font-size: 16px;
+    padding: 20px 0;
+
+    img {
+        width: 10px;
+        transform: rotate(180deg);
+    }
+
+    .up {
+        transform: rotate(0);
+    }
+}
+
+.text {
+    padding: 6px 0;
+    font-size: 14px;
+}

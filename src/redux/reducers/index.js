@@ -6,5 +6,6 @@ import search from "./search";
 import authPopUp from "./auth-pop-up";
 import menu from "./menu";
 import root from "./root";
+import product from "./product";
 
-export default combineReducers({ shoppingBag, wishList, language, search, authPopUp, menu, root });
+export default combineReducers({ shoppingBag, wishList, language, search, authPopUp, menu, root, product });

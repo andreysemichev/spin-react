@@ -7,3 +7,6 @@ export {default as LanguageDrop} from "./LanguageDrop";
 export {default as AuthPopUp} from "./AuthPopUp";
 export {default as CheckBox} from "./CheckBox";
 export {default as Menu} from "./Menu";
+export {default as ProductCarousel} from "./ProductCarousel";
+export {default as ProductDeliveryDrop} from "./ProductDeliveryDrop";
+export {default as ProductDescriptionDrop} from "./ProductDescriptionDrop";

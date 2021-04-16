@@ -47,4 +47,12 @@ paths.product = {};
 paths.product.setProduct = "/product/setProduct";
 paths.product.setIsLoading = "/product/setIsLoading";
 
+// filters
+paths.filters = {};
+paths.filters.setItems = "/filters/setItems";
+paths.filters.setIsLoading = "/filters/setIsLoading";
+paths.filters.setConditionIsHide = "/filters/setConditionIsHide";
+paths.filters.setSizeIsHide = "/filters/setSizeIsHide";
+paths.filters.setDesignerIsHide = "/filters/setDesignerIsHide";
+
 export default paths;

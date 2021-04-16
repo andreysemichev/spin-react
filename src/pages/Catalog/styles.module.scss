@@ -1,0 +1,17 @@
+.wrapper {
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+
+    .error {
+        font-size: 50px;
+        color: #e74c3c;
+    }
+
+    .link {
+        font-size: 20px;
+        border-bottom: 1px solid rgba(51, 51, 51, 0.3);
+    }
+}

@@ -1,0 +1,27 @@
+.wrapper {
+    padding-top: 50px;
+    display: flex;
+    justify-content: center;
+}
+
+.item {
+    cursor: pointer;
+    margin-left: 5px;
+    padding: 0;
+    border-radius: 0;
+    font-size: 16px;
+    font-weight: 500;
+    width: 60px;
+    height: 60px;
+    line-height: 60px;
+    text-align: center;
+    color: #000;
+
+    &:hover {
+        background: #f1f1f1;
+    }
+}
+
+.selected {
+    background: #f6f6f6;
+}

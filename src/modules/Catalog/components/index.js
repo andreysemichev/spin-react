@@ -2,7 +2,7 @@ import React from "react";
 import { } from "components"
 import styles from "./styles.module.scss";
 import { CatalogDrop } from "components";
-import { SortField, ProductMiniСardItems } from "containers";
+import { SortField, ProductMiniСardItems, Pagination } from "containers";
 
 const Component = ({ 
     condition, size, designer,
@@ -30,6 +30,7 @@ const Component = ({
             <div className={styles.title}>{title} <span className={styles.titleCounter}>({counter} товаров)</span></div>
             <SortField />
             <ProductMiniСardItems />
+            <Pagination />
         </div>
     </main>);
 }

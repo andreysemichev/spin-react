@@ -14,3 +14,4 @@ export {default as CatalogDrop} from "./CatalogDrop";
 export {default as SortField} from "./SortField";
 export {default as ProductMiniСard} from "./ProductMiniСard";
 export {default as ProductMiniСardItems} from "./ProductMiniСardItems";
+export {default as Pagination} from "./Pagination";

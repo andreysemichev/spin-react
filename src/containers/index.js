@@ -7,3 +7,4 @@ export {default as AuthPopUp} from "./AuthPopUp";
 export {default as Menu} from "./Menu";
 export {default as SortField} from "./SortField";
 export {default as ProductMiniСardItems} from "./ProductMiniСardItems";
+export {default as Pagination} from "./Pagination";

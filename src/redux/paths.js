@@ -60,4 +60,9 @@ paths.productCards = {};
 paths.productCards.setItems = "paths.productCards.setItems";
 paths.productCards.setIsLoading = "paths.productCards.setItems";
 
+// pagination
+paths.pagination = {};
+paths.pagination.setAllPageCount = "paths.pagination.setAllPageCount";
+paths.pagination.setIsLoading = "paths.pagination.setIsLoading";
+
 export default paths;

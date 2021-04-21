@@ -55,4 +55,9 @@ paths.filters.setConditionIsHide = "/filters/setConditionIsHide";
 paths.filters.setSizeIsHide = "/filters/setSizeIsHide";
 paths.filters.setDesignerIsHide = "/filters/setDesignerIsHide";
 
+//  product cards
+paths.productCards = {};
+paths.productCards.setItems = "paths.productCards.setItems";
+paths.productCards.setIsLoading = "paths.productCards.setItems";
+
 export default paths;

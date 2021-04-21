@@ -8,5 +8,6 @@ import menu from "./menu";
 import root from "./root";
 import product from "./product";
 import filters from "./filters";
+import productCards from "./product-cards";
 
-export default combineReducers({ shoppingBag, wishList, language, search, authPopUp, menu, root, product, filters });
+export default combineReducers({ shoppingBag, wishList, language, search, authPopUp, menu, root, product, filters, productCards });

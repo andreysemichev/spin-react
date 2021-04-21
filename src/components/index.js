@@ -12,3 +12,5 @@ export {default as ProductDeliveryDrop} from "./ProductDeliveryDrop";
 export {default as ProductDescriptionDrop} from "./ProductDescriptionDrop";
 export {default as CatalogDrop} from "./CatalogDrop";
 export {default as SortField} from "./SortField";
+export {default as ProductMiniСard} from "./ProductMiniСard";
+export {default as ProductMiniСardItems} from "./ProductMiniСardItems";

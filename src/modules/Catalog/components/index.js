@@ -2,7 +2,7 @@ import React from "react";
 import { } from "components"
 import styles from "./styles.module.scss";
 import { CatalogDrop } from "components";
-import { SortField } from "containers";
+import { SortField, ProductMiniСardItems } from "containers";
 
 const Component = ({ 
     condition, size, designer,
@@ -29,6 +29,7 @@ const Component = ({
         <div className={styles.content}>
             <div className={styles.title}>{title} <span className={styles.titleCounter}>({counter} товаров)</span></div>
             <SortField />
+            <ProductMiniСardItems />
         </div>
     </main>);
 }

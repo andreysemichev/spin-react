@@ -6,3 +6,4 @@ export {default as AuthDrop} from "./AuthDrop";
 export {default as AuthPopUp} from "./AuthPopUp";
 export {default as Menu} from "./Menu";
 export {default as SortField} from "./SortField";
+export {default as ProductMiniСardItems} from "./ProductMiniСardItems";

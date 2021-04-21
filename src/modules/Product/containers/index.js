@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from "react";
+import {useLocation} from "react-router-dom"
 import { connect } from "react-redux";
 import { productActions } from "redux/actions"
 import Product from "../components";
@@ -6,16 +7,17 @@ import Product from "../components";
 const Index = ({ id, images, name, price, currency, description, isLoading, fetchProduct }) => {
     const [isHideDelivery, setIsHideDelivery] = useState(true);
     const [isHideDescription, setIsHideDescription] = useState(false);
+    const productId = useLocation().pathname.slice(3);
 
     useEffect(() => {
         if (id === null) {
-            fetchProduct();
+            fetchProduct(productId);
         }
         // eslint-disable-next-line
     }, [id]);
 
     const handleShowOrHide = event => {
-        const target = event.target;
+        const target = event.currentTarget;
         const name = target.getAttribute("data-name");
 
         if (name === "delivery") {

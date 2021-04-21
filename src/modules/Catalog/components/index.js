@@ -1,7 +1,8 @@
 import React from "react";
 import { } from "components"
 import styles from "./styles.module.scss";
-import {CatalogDrop} from "components";
+import { CatalogDrop } from "components";
+import { SortField } from "containers";
 
 const Component = ({ 
     condition, size, designer,
@@ -9,6 +10,7 @@ const Component = ({
     handleSetConditionIsHide, handlesetSizeIsHide, handlesetDesignerIsHide,
     handleSetIsCheckLocalCondition, handleSetIsCheckLocalSize, handleSetIsCheckLocalDesigner,
     isUpdatedFilters, applyFilters, resetFilters, isEmptyFilter,
+    title, counter
 }) => {
     return (<main className={styles.container}>
         <div>
@@ -25,7 +27,8 @@ const Component = ({
             {isUpdatedFilters && <div className={styles.button} onClick={applyFilters}>Применить</div>}
         </div>
         <div className={styles.content}>
-            <div className={styles.title}>название_категории <span className={styles.titleCounter}>(кол-во товаров)</span></div>
+            <div className={styles.title}>{title} <span className={styles.titleCounter}>({counter} товаров)</span></div>
+            <SortField />
         </div>
     </main>);
 }

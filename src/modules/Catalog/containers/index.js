@@ -7,6 +7,7 @@ import queryVariable from "utils/queryVariable";
 import addIsCheckField from "utils/addIsCheckField";
 import getQuetySelectedFields from "utils/getQuetySelectedFields";
 
+
 const Container = ({
     isLoading,
     setIsLoading,
@@ -28,12 +29,21 @@ const Container = ({
     const [redirectURL, setRedirectURL] = useState(null);
     const query = queryVariable(useLocation().search);
     const pathname = useLocation().pathname;
+    const clothingType = useLocation().pathname.slice(3);
 
     let isEmptyFilter = true;
     if (query.condition || query.size || query.designer) {
         isEmptyFilter = false
     }
 
+    // подгрузка категорий
+    // только при первичном рендере
+    useEffect(() => {
+        fetchItems();
+        // eslint-disable-next-line
+    }, []);
+
+    // обнуление параметров, когда обновляется redirectURL
     useEffect(() => {
         if (redirectURL !== null) {
             setRedirectURL(null);
@@ -42,12 +52,7 @@ const Container = ({
         // eslint-disable-next-line
     }, [redirectURL]);
 
-    useEffect(() => {
-        fetchItems();
-        // eslint-disable-next-line
-    }, []);
-    
-    // Заполнение полей
+    // заполнение чекбоксов
     useEffect(() => {
         if (condition !== null) {
             setLocalCondition(addIsCheckField(condition, query.condition));
@@ -55,6 +60,7 @@ const Container = ({
         // eslint-disable-next-line
     }, [condition]);
 
+    // заполнение чекбоксов
     useEffect(() => {
         if (size !== null) {
             setLocalSize(addIsCheckField(size, query.size));
@@ -62,6 +68,7 @@ const Container = ({
         // eslint-disable-next-line
     }, [size]);
 
+    // заполнение чекбоксов
     useEffect(() => {
         if (designer !== null) {
             setLocalDesigner(addIsCheckField(designer, query.designer));
@@ -76,47 +83,33 @@ const Container = ({
     const handlesetDesignerIsHide = () => {
         setDesignerIsHide();
     }
+
     const handlesetSizeIsHide = () => {
         setSizeIsHide();
     }
 
-    // TODO
-    // Перепиши повторы кода в функцию, которую нужно создать в утилитах
-
-    const handleSetIsCheckLocalCondition = (event) => {
+    const setCheckbox = (event, local, setLocal) => {
         const target = event.currentTarget;
         const name = target.getAttribute("data-name");
         setIsUpdatedFilters(true);
-        setLocalCondition(localCondition.map(item => {
+        setLocal(local.map(item => {
             if (item.name === name) {
                 item.isCheck = !item.isCheck;
             }
             return item;
         }));
+    }
+
+    const handleSetIsCheckLocalCondition = (event) => {
+        setCheckbox(event, localCondition, setLocalCondition);
     }
 
     const handleSetIsCheckLocalSize = (event) => {
-        const target = event.currentTarget;
-        const name = target.getAttribute("data-name");
-        setIsUpdatedFilters(true);
-        setLocalSize(localSize.map(item => {
-            if (item.name === name) {
-                item.isCheck = !item.isCheck;
-            }
-            return item;
-        }))
+        setCheckbox(event, localSize, setLocalSize);
     }
 
     const handleSetIsCheckLocalDesigner = (event) => {
-        const target = event.currentTarget;
-        const name = target.getAttribute("data-name");
-        setIsUpdatedFilters(true);
-        setLocalDesigner(localDesigner.map(item => {
-            if (item.name === name) {
-                item.isCheck = !item.isCheck;
-            }
-            return item;
-        }));
+        setCheckbox(event, localDesigner, setIsUpdatedFilters);
     }
 
     const applyFilters = () => {
@@ -189,6 +182,8 @@ const Container = ({
         applyFilters={applyFilters}
         resetFilters={resetFilters}
         isEmptyFilter={isEmptyFilter}
+        title={query.category ? query.category : clothingType}
+        counter={322}
     />
 };
 

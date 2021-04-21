@@ -4,6 +4,9 @@ import "scss/core.scss";
 
 import { Root, NotFound, Product, Catalog } from "pages";
 
+// TODO
+// надо все рефакторить, но после настройки основных моментов
+
 const App = () => {
     return (<Switch>
         <Route exact path="/" component={Root} />

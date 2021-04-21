@@ -30,3 +30,17 @@
     border: 0;
     cursor: pointer;
 }
+
+.title {
+    font-size: 22px;
+    font-weight: 800;
+    text-transform: uppercase;
+    margin-bottom: 20px;
+
+    &Counter {
+        font-size: 14px;
+        font-weight: normal;
+        margin-left: 10px;
+    }
+}
+

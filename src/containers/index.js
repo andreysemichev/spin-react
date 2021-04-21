@@ -5,3 +5,4 @@ export {default as Search} from "./Search";
 export {default as AuthDrop} from "./AuthDrop";
 export {default as AuthPopUp} from "./AuthPopUp";
 export {default as Menu} from "./Menu";
+export {default as SortField} from "./SortField";

@@ -4,10 +4,10 @@ export default (items, name) => {
 
     items.forEach(item => {
         if (item.isCheck && !flag) {
-            temp += item.name.replace(/ /g,"_").toLowerCase();
+            temp += item.name.replace(/ /g,"%20").toLowerCase();
             flag = true;
         } else if (item.isCheck && flag) {
-            temp += "+" + item.name.replace(/ /g,"_").toLowerCase();
+            temp += "," + item.name.replace(/ /g,"%20").toLowerCase();
         }
     });
 

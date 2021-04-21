@@ -8,7 +8,7 @@ const App = () => {
     return (<Switch>
         <Route exact path="/" component={Root} />
         <Route exact path="/p/:id" component={Product} /> 
-        <Route exact path={["/c/wear/:filter", "/c/shoes/:filter", "/c/accessories/:filter"]} component={Catalog} /> 
+        <Route exact path={["/c/wear", "/c/shoes", "/c/accessories","/c/new" ]} component={Catalog} /> 
         <Route component={NotFound} />
     </Switch>);
 };

@@ -7,8 +7,6 @@ import queryVariable from "utils/queryVariable";
 import addIsCheckField from "utils/addIsCheckField";
 import getQuetySelectedFields from "utils/getQuetySelectedFields";
 
-// http://localhost:3000/c/t-shirt?condition=new+good&size=xs
-
 const Container = ({
     isLoading,
     setIsLoading,
@@ -28,11 +26,13 @@ const Container = ({
     const [localDesigner, setLocalDesigner] = useState(null);
     const [isUpdatedFilters, setIsUpdatedFilters] = useState(false);
     const [redirectURL, setRedirectURL] = useState(null);
-    // const [squeryIsEmpty, setQueryIsEmpty] = useState(null);
     const query = queryVariable(useLocation().search);
     const pathname = useLocation().pathname;
-    const queryIsEmpty = useLocation().search.length === 0;
 
+    let isEmptyFilter = true;
+    if (query.condition || query.size || query.designer) {
+        isEmptyFilter = false
+    }
 
     useEffect(() => {
         if (redirectURL !== null) {
@@ -47,6 +47,7 @@ const Container = ({
         // eslint-disable-next-line
     }, []);
     
+    // Заполнение полей
     useEffect(() => {
         if (condition !== null) {
             setLocalCondition(addIsCheckField(condition, query.condition));
@@ -85,14 +86,11 @@ const Container = ({
     const handleSetIsCheckLocalCondition = (event) => {
         const target = event.currentTarget;
         const name = target.getAttribute("data-name");
-
         setIsUpdatedFilters(true);
-
         setLocalCondition(localCondition.map(item => {
             if (item.name === name) {
                 item.isCheck = !item.isCheck;
             }
-
             return item;
         }));
     }
@@ -100,14 +98,11 @@ const Container = ({
     const handleSetIsCheckLocalSize = (event) => {
         const target = event.currentTarget;
         const name = target.getAttribute("data-name");
-
         setIsUpdatedFilters(true);
-
         setLocalSize(localSize.map(item => {
             if (item.name === name) {
                 item.isCheck = !item.isCheck;
             }
-
             return item;
         }))
     }
@@ -115,51 +110,58 @@ const Container = ({
     const handleSetIsCheckLocalDesigner = (event) => {
         const target = event.currentTarget;
         const name = target.getAttribute("data-name");
-
         setIsUpdatedFilters(true);
-
         setLocalDesigner(localDesigner.map(item => {
             if (item.name === name) {
                 item.isCheck = !item.isCheck;
             }
-
             return item;
         }));
     }
 
     const applyFilters = () => {
         let result = "";
-        let flag = true; // нет чекнутых полей
-
         let conditionQuery = getQuetySelectedFields(localCondition, "condition");
-        if (conditionQuery) {
-            flag = false;
-            result += "?" + conditionQuery;
+        let sizeQuery = getQuetySelectedFields(localSize, "size");
+        let designerQuery = getQuetySelectedFields(localDesigner, "designer");
+
+        if (query.category) {
+            result += `?category=${query.category}`;
         }
 
-        let sizeQuery = getQuetySelectedFields(localSize, "size");
+        if (conditionQuery) {
+            result += (result.length === 0)? "?" + conditionQuery : "&" + conditionQuery;
+        }
+
         if (sizeQuery) {
-            flag = false;
             result += (result.length === 0)? "?" + sizeQuery : "&" + sizeQuery;
         }
-        
-        let designerQuery = getQuetySelectedFields(localDesigner, "size");
+
         if (designerQuery) {
-            flag = false;
             result += (result.length === 0)? "?" + designerQuery : "&" + designerQuery;
         }
 
-        if (result.length !== 1) {
-            setRedirectURL(pathname + result);
-        } else if (flag) {
-            resetFilters();
+        if (query.sorting) {
+            let sorting = `sorting=${query.sorting}`;
+            result += (result.length === 0)? "?" + sorting : "&" + sorting; 
         }
+
+        setRedirectURL(pathname + result);
     }
 
     const resetFilters = () => {
-        if (!queryIsEmpty) {
-            setRedirectURL(pathname);
+        let resultUrl = "";
+
+        if (query.category) {
+            resultUrl += `?category=${query.category}`;
         }
+
+        if (query.sorting) {
+            let sorting = `sorting=${query.sorting}`;
+            resultUrl += (resultUrl.length === 0)? "?" + sorting : "&" + sorting; 
+        }
+
+        setRedirectURL(pathname + resultUrl);
         setIsUpdatedFilters(false);
         setLocalCondition(addIsCheckField(condition));
         setLocalSize(addIsCheckField(size));
@@ -186,7 +188,7 @@ const Container = ({
         isUpdatedFilters={isUpdatedFilters}
         applyFilters={applyFilters}
         resetFilters={resetFilters}
-        queryIsEmpty={queryIsEmpty}
+        isEmptyFilter={isEmptyFilter}
     />
 };
 

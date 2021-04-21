@@ -8,7 +8,7 @@ const Component = ({
     conditionIsHide, designerIsHide, sizeIsHide,
     handleSetConditionIsHide, handlesetSizeIsHide, handlesetDesignerIsHide,
     handleSetIsCheckLocalCondition, handleSetIsCheckLocalSize, handleSetIsCheckLocalDesigner,
-    isUpdatedFilters, applyFilters, resetFilters, queryIsEmpty
+    isUpdatedFilters, applyFilters, resetFilters, isEmptyFilter,
 }) => {
     return (<main className={styles.container}>
         <div>
@@ -21,10 +21,12 @@ const Component = ({
             {designer && designer.length !== 0 && <div className={styles.rightItem}>
                 <CatalogDrop items={designer} isDesigners={true} name="Дизайнеры" isHide={designerIsHide} handleSetIsHide={handlesetDesignerIsHide} handleSetIsCheck={handleSetIsCheckLocalDesigner} />
             </div> }
-            {(!queryIsEmpty || isUpdatedFilters) && <div className={styles.button} onClick={resetFilters}>Сбросить</div>}
+            {(!isEmptyFilter || isUpdatedFilters) && <div className={styles.button} onClick={resetFilters}>Сбросить</div>}
             {isUpdatedFilters && <div className={styles.button} onClick={applyFilters}>Применить</div>}
         </div>
-        <div>Goods</div>
+        <div className={styles.content}>
+            <div className={styles.title}>название_категории <span className={styles.titleCounter}>(кол-во товаров)</span></div>
+        </div>
     </main>);
 }
 

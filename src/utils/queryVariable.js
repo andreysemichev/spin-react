@@ -5,7 +5,7 @@ function getQueryVariable(variable) {
     for (let i = 0; i < query.length; i++) {
         let temp = query[i].split("=");
         if (temp.length === 2) {
-            result[temp[0]] = temp[1].split("+")
+            result[temp[0]] = temp[1].split(",")
         }
     }
 

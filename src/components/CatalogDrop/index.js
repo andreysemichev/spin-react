@@ -4,9 +4,6 @@ import {NavLink} from "react-router-dom";
 import {CheckBox} from "components";
 import styles from "./styles.module.scss";
 
-// TODO
-// Если присутствует перенос слов, то ломается верстка
-
 const Index = ({
     isRows = false,
     isDesigners = false,
